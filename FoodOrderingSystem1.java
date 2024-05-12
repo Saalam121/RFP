@@ -179,7 +179,8 @@ public class FoodOrderingSystem1 extends JFrame implements ActionListener {
         proceedButton.setFont(font);
         proceedButton.addActionListener(e -> {
             optionPane.setValue(JOptionPane.OK_OPTION);
-            new PaymentWindow();
+            new PaymentWindow(connection, loggedInUsername, totalAmount);
+            dispose();
         });
 
         optionPane.setOptions(new Object[]{proceedButton});
