@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class FoodOrderingSystem1 extends JFrame implements ActionListener {
-    private JLabel textHeader, Description;
+    private JLabel textHeader, Description, userLabel;
     private JLabel MealsLabel, chapatiLabel, teaLabel, Fried_riceLabel, DrinksLabel, mandaziLabel;
     private JSpinner MealsSpinner, chapatiSpinner, teaSpinner, Fried_riceSpinner, DrinksSpinner, mandaziSpinner;
     private JButton b;
@@ -44,6 +44,9 @@ public class FoodOrderingSystem1 extends JFrame implements ActionListener {
         DrinksSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
         mandaziSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 
+        userLabel = new JLabel("Logged in as: " + loggedInUsername);
+        userLabel.setFont(new Font("Arial", Font.PLAIN, 14));
+
         b = new JButton("ORDER");
         b.addActionListener(this);
 
@@ -64,6 +67,7 @@ public class FoodOrderingSystem1 extends JFrame implements ActionListener {
         addLabelWithSpinner(container, gbc, mandaziLabel, mandaziSpinner);
 
         container.add(b, gbc);
+        container.add(userLabel, gbc);
 
         MealsLabel.setFont(new Font("Arial", Font.PLAIN, 20));
         chapatiLabel.setFont(new Font("Arial", Font.PLAIN, 20));
